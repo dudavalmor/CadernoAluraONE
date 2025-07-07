@@ -1,0 +1,89 @@
+#################################
+####TIPOS PRIMITIVOS DE DADOS####
+#################################
+
+- boolean: representa valores lógicos (true ou false). É utilizado em expressões condicionais, loops e outros casos que
+se precisa verificar se a condição é verdadeira ou falsa.
+
+- byte: utilizado para reprenstar valores inteiros de 8 bites. Possui uma faixa de valores de -128 a 127.
+
+- char: utilizado para representar caracteres individuais. Pode armazenar qualquer caractere Unicode e é representado
+por aspas simples.
+
+- short: Utilizado para representar valores inteiros de 16 bites. Possui uma faixa de valores de -32.768 a 32.767
+
+- int: Utilizado para representar valores inteiros de 32 bites. Possui uma faixa de valores de -2.147.483.648 a
+2.147.483.647.
+
+- long: O tipo long é utilizado para representar valores numéricos inteiros de 64 bits. Ele é utilizado para representar
+valores inteiros muito grandes e possui uma faixa de valores de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807.
+
+- float: Utilizado para representar valores numéricos de pontos flutuantes (casas decimais), ocupando 32 bites de
+memória. Ele pode representar números decimais com até sete dígitos e tem uma precisão limitada, o que significa que
+ele pode arredondar os números se eles forem muito grandes ou muito pequenos.
+
+- double: O tipo double é similar o float, entretanto ele ocupa 64 bits de memória e pode representar números decimais
+com até 15 dígitos.
+
+
+#################################
+######COMPARAÇÃO DE STRINGS######
+#################################
+
+Para comparar se duas Strings são iguais, devemos utilizar o método equals():
+
+String senha = "12345";
+if (senha.equals("12345")) {
+    System.out.println("Acesso autorizado!");
+} else {
+    System.out.println("Senha incorreta.");
+}
+
+equalsIgnoreCase() é utilizado para que a comparação desconsidere as letras maiúsculas e minúsculas.
+Utilizando o equals(), "eduarda" e "Eduarda" são diferentes, já com o equalsIgnoreCase(), são iguais.
+
+#################################
+#######FORMATAÇÃO DE TEXTO#######
+#################################
+
+- format(): método mais comum de se formatar textos. O %s indica que uma String será inserida no placeholder, %d indica
+um valor inteiro e %f indica um valor de ponto flutuante. Vamos ver um exemplo:
+
+String nome = "Maria";
+int idade = 30;
+double valor = 55.9999;
+System.out.println(String.format("Meu nome é %s, eu tenho %d anos e hoje gastei %.2f reais", nome, idade, valor));
+-> Aqui, o placeholder %.2f indica que o valor deve ser formatado com duas casas decimais.
+
+Temos também um exemplo utilizando Text Block, que há algumas modificações:
+
+String nome = "João";
+int aulas = 4;
+
+String mensagem = """
+                  Olá, %s!
+                  Boas vindas ao curso de Java.
+                  Teremos %d aulas para te mostrar o que é preciso para você dar o seu primeiro mergulho na linguagem!
+                  """.formatted(nome, aulas);
+
+System.out.println(mensagem);
+
+#####################
+#######CASTING#######
+#####################
+
+O casting é um recurso utilizado para converter um tipo de dado em outro. Ele é utilizado para permitir que tipos de
+dados incompatíveis possam ser utilizados em uma mesma operação ou expressão.
+
+- Casting implícito: realizado automaticamente pelo compilador quando o tipo de dado de origem é compatível com o tipo
+de dado de destino. Por exemplo, é possível atribuir um valor de tipo int a uma variável do tipo double, pois o tipo
+double é maior e suporta todos os valores que o tipo int pode armazenar:
+
+int x = 10;
+double y = x; // casting implícito
+
+- Casting explícito: realizado quando o tipo de dado de origem é incompatível com o tipo de dado de destino. Nesse caso,
+devemos utilizar o operador de casting para realizar a conversão:
+
+double x = 10.5;
+int y = (int) x; // casting explícito
