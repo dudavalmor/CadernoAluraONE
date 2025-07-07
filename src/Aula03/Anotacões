@@ -1,0 +1,62 @@
+####################
+####CONDICIONAIS####
+####################
+
+Condicionais são estruturas que permitem executar diferentes blocos de código dependendo de condições lógicas.
+
+1- if/else: Usado para testar uma ou mais condições:
+
+double nota = 8.5;
+if (nota < 5) {
+    System.out.println("Reprovado");
+} else if (nota < 7) {
+    System.out.println("Aprovado com PF");
+} else {
+    System.out.println("Aprovado");
+}
+
+2- Switch case: Útil para comparar uma variável com vários valores fixos:
+
+int dia = 3;
+String nomeDia;
+
+switch (dia) {
+   case 1:
+      nomeDia = "domingo";
+      break;
+   case 2:
+      nomeDia = "segunda-feira";
+      break;
+   case 3:
+      nomeDia = "terça-feira";
+      break;
+   case 4:
+      nomeDia = "quarta-feira";
+      break;
+   case 5:
+      nomeDia = "quinta-feira";
+      break;
+   case 6:
+      nomeDia = "sexta-feira";
+      break;
+   case 7:
+      nomeDia = "sábado";
+      break;
+   default:
+      nomeDia = "Dia inválido";
+      break;
+}
+
+System.out.println("O dia " + dia + " é " + nomeDia);
+
+- OPERADORES DE COMPARAÇÃO
+==	Igualdade
+!=	Diferente
+>	Maior que
+<	Menor que
+>=	Maior ou igual
+<=	Menor ou igual
+
+- OPERADORES LÓGICOS
+&&	E (and)
+!	NÃO (not)
