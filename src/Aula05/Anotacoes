@@ -1,0 +1,44 @@
+JAVA POO
+##############################
+###MODIFICADORES DE ACESSOS###
+##############################
+
+Em Java, os modificadores de acesso são palavras-chaves que definem o nível de visibilidade de classes, atributos e métodos,
+sendo que eles ajudam a garatantir a segurança e o encapsulamento do código. Existem quatro tipos de modificadores de
+acesso em Java: public, protected, private e default (também conhecido como package-private).
+
+- Public: É o mais permissivo de todos. Uma classe, atributo ou método declarado como public pode ser acessado por qualquer
+classe em qualquer pacote. Ou seja, ele possui visibilidade pública e pode ser utilizado livremente.
+
+- Default (Package-private): É aquele que não especifica nenhum modificador de acesso. Quando nenhum modificador de acesso é
+especificado, a classe, atributo ou método pode ser acessado apenas pelas classes que estão no mesmo pacote.
+
+- Private: É o mais restritivo de todos. Uma classe, atributo ou método declarado como private só pode ser acessado dentro da
+própria classe. Ou seja, ele possui visibilidade restrita e não pode ser utilizado por outras classes.
+
+Existe ainda um último modificador de acesso, que é o protected, mas falaremos dele mais adiante no curso, após ser apresentado
+o conceito de herança de classes.
+
+#######################
+###GETTERS E SETTERS###
+#######################
+
+Getters e setters são métodos usados para acessar (get) e modificar (set) os valores de atributos privados de uma classe.
+Por que usar?
+- Aplicam o encapsulamento da Programação Orientada a Objetos.
+- Protegem os dados internos de acesso direto.
+- Permitem validações, formatos e regras de negócio ao acessar ou modificar atributos.
+
+-> PALAVRA CHAVE THIS
+É usada para fazer referência aos atributos da classe, especialmente em métodos em que têm parâmetros com o mesmo nome do
+atributo da classe em que estamos trabalhando.
+
+public class Lampada {
+    private boolean ligada;
+    private String modelo;
+
+    public void acendeLampada(boolean ligada) {
+       this.ligada = ligada;
+    }
+}
+
