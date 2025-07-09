@@ -1,0 +1,73 @@
+JAVA POO
+#############
+###HERANÇA###
+#############
+
+Herança é um conceito fundamental da programação orientada a objetos, implementada em Java através da relação é um entre classes. Isso
+significa que uma classe pode herdar atributos e métodos de outras classes, tornando o código mais reutilizável.
+No java, essa relação é feita através da palavra "extends". A classe que herda é chamada de subclasse, e a classe que é herdada é chamada
+de superclasse.
+A subclasse pode acessar todos os atributos e métodos públicos e protegidos da superclasse, além de poder subescrever os métodos da
+superclasse para criar comportamentos específicos. Quando os atributos da superclasse forem privados, embora os atributos sejam herdados,
+como eles foram declarados como private na superclasse, não poderão ser acessados diretamente na subclasse, devendo então serem utlizados
+os métodos getters/setter, que são públicos.
+
+Exemplo:
+
+public class Conta {
+
+  private String titular;
+  private double saldo;
+
+  public void sacar(double valor) {
+    if (valor <= 0) {
+      System.out.println("Valor deve ser maior do que zero!");
+    } else if (saldo >= valor) {
+      saldo -= valor;
+      System.out.println("Saque realizado com sucesso. Saldo atual: " +saldo);
+    } else {
+      System.out.println("Saldo insuficiente.");
+    }
+  }
+
+  public void depositar(double valor) {
+    if (valor > 0) {
+      saldo += valor;
+      System.out.println("Depósito realizado com sucesso. Saldo atual: " +saldo);
+    } else {
+      System.out.println("Valor deve ser maior do que zero!");
+    }
+  }
+
+  //getters e setters
+}
+
+public class ContaPoupanca extends Conta {
+
+  private double taxaDeJuros;
+
+  public void calcularJuros() {
+    double juros = this.getSaldo() * taxaDeJuros;
+    System.out.println("Juros atual: " +juros);
+  }
+
+  public void sacar(double valor) {
+    double taxaSaque = 0.01;
+    super.sacar(valor + taxaSaque);
+  }
+
+  //getters e setters
+}
+
+-> Repare que o método sacar também foi sobrescrito.
+
+OBS: No java não é permitdo uma herança múltipla de forma direta.
+
+###########################
+###MODIFICADOR PROTECTED###
+###########################
+
+O modificador protected permite que os atributos de uma classe sejam acessados por outras classes do mesmo pacote e também por suas
+subclasses, independentemente do pacote que elas se encontram.
+Esse modificador é útil em situações em que uma classe precisa permitir que suas subclasses acessem diretamente seus atributos, sem a
+necessidade de restringir o acesso pelos métodos getters e setters.
